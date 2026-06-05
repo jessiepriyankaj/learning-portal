@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue: #185FA5;
+  --blue-light: #E6F1FB;
+  --blue-mid: #378ADD;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f8f8f6;
+  color: #1a1a1a;
+}
+
+.card {
+  background: #fff;
+  border: 0.5px solid #e0e0dc;
+  border-radius: 12px;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary:hover { background: #0C447C; }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-secondary {
+  background: transparent;
+  color: #1a1a1a;
+  border: 0.5px solid #ccc;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-secondary:hover { background: #f0f0ee; }
+
+input[type=text], input[type=password], input[type=email], select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 0.5px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  color: #1a1a1a;
+  outline: none;
+  font-family: inherit;
+}
+input:focus, select:focus {
+  border-color: var(--blue-mid);
+  box-shadow: 0 0 0 2px rgba(55,138,221,0.15);
+}
+
+.badge-success { background: #EAF3DE; color: #3B6D11; border: 0.5px solid #C0DD97; padding: 3px 10px; border-radius: 99px; font-size: 12px; }
+.badge-pending { background: #FAEEDA; color: #854F0B; border: 0.5px solid #FAC775; padding: 3px 10px; border-radius: 99px; font-size: 12px; }
+.badge-locked  { background: #f0f0ee; color: #888; border: 0.5px solid #ddd; padding: 3px 10px; border-radius: 99px; font-size: 12px; }
