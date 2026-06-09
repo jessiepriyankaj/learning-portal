@@ -61,7 +61,7 @@ export default function AdminPage() {
       ...f,
       allowed_courses: allSelected
         ? f.allowed_courses.filter(id => !catCourses.includes(id))
-        : [...new Set([...f.allowed_courses, ...catCourses])]
+        : Array.from(new Set([...f.allowed_courses, ...catCourses]))
     }))
   }
 
