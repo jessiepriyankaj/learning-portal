@@ -1,89 +1,384 @@
+// ================================================================
+// content.ts  —  Merit Matters Learning Portal
+// All course content, slides, and question BANKS live here.
+// Quiz questions are drawn RANDOMLY each attempt.
+// ================================================================
+
+export const CATEGORIES = [
+  { id: 'mandatory',         label: 'Mandatory & Legal Compliance',   color: '#FAECE7', iconColor: '#993C1D', icon: 'shield-check' },
+  { id: 'onboarding',        label: 'Onboarding & Culture',           color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'users' },
+  { id: 'health',            label: 'Health, Safety & Wellbeing',     color: '#E6F4EC', iconColor: '#2D7D46', icon: 'heart-pulse' },
+  { id: 'professional',      label: 'Professional Skills',            color: '#EEEDFE', iconColor: '#534AB7', icon: 'pen-line' },
+  { id: 'people-management', label: 'People Management',              color: '#FDF3DC', iconColor: '#7a5a1a', icon: 'briefcase' },
+  { id: 'finance',           label: 'Finance & Admin Awareness',      color: '#E6F4EC', iconColor: '#1B6B4A', icon: 'landmark' },
+  { id: 'customer',          label: 'Customer-Facing Roles',          color: '#FBEAF0', iconColor: '#993556', icon: 'headphones' },
+]
+
 export const COURSES = [
-  {
-    id: 'posh-basic',
-    title: 'POSH Awareness Training',
-    subtitle: 'Prevention of Sexual Harassment — mandatory for all employees',
-    duration: '~30 min',
-    icon: 'shield',
-  },
-  {
-    id: 'posh-icc',
-    title: 'ICC Committee Training',
-    subtitle: 'For Internal Complaints Committee members only',
-    duration: '~45 min',
-    icon: 'users',
-  },
+  // MANDATORY
+  { id: 'posh-basic',       category: 'mandatory',         title: 'POSH Awareness Training',                      subtitle: 'Prevention of Sexual Harassment — mandatory for all employees',   duration: '~45 min', icon: 'shield' },
+  { id: 'bullying',         category: 'mandatory',         title: 'Prevention of Workplace Bullying',             subtitle: 'Recognising, reporting and preventing bullying at work',           duration: '~30 min', icon: 'shield-alert' },
+  { id: 'abac',             category: 'mandatory',         title: 'Anti-Bribery & Corruption (ABAC)',             subtitle: 'Ethical conduct, gifts policy and zero-tolerance standards',       duration: '~30 min', icon: 'scale' },
+  { id: 'data-privacy',     category: 'mandatory',         title: 'Data Privacy & DPDP Act',                     subtitle: 'India\'s Digital Personal Data Protection Act & GDPR basics',     duration: '~35 min', icon: 'lock' },
+  // ONBOARDING
+  { id: 'code-of-conduct',  category: 'onboarding',        title: 'Code of Conduct & Ethics',                    subtitle: 'Company values, professional standards and ethical behaviour',    duration: '~25 min', icon: 'clipboard' },
+  { id: 'culture-dei',      category: 'onboarding',        title: 'Diversity, Equity & Inclusion',               subtitle: 'Building an inclusive workplace where everyone belongs',          duration: '~30 min', icon: 'users' },
+  { id: 'hr-policies',      category: 'onboarding',        title: 'HR Policies & Procedures',                    subtitle: 'Leave, attendance, grievance and key company policies',           duration: '~25 min', icon: 'file-text' },
+  // HEALTH
+  { id: 'workplace-safety', category: 'health',            title: 'Workplace Safety & Health',                   subtitle: 'Hazard identification, safety protocols and emergency response', duration: '~30 min', icon: 'hard-hat' },
+  { id: 'mental-health',    category: 'health',            title: 'Mental Health & Stress Management',           subtitle: 'Recognising burnout, building resilience and seeking help',       duration: '~25 min', icon: 'brain' },
+  // PROFESSIONAL
+  { id: 'biz-comm',         category: 'professional',      title: 'Business Communication & Email Writing',      subtitle: 'Write clearly, professionally and with impact',                  duration: '~30 min', icon: 'mail' },
+  { id: 'english-grammar',  category: 'professional',      title: 'English Grammar — The Fun Way',               subtitle: 'Master grammar rules through examples, humour, and stories',     duration: '~40 min', icon: 'book-open' },
+  { id: 'presentation',     category: 'professional',      title: 'Presentation Skills',                         subtitle: 'Structure, design and deliver presentations with confidence',    duration: '~30 min', icon: 'presentation' },
+  // PEOPLE MANAGEMENT
+  { id: 'performance-mgmt', category: 'people-management', title: 'Performance Management & Feedback',           subtitle: 'Goal-setting, appraisals and giving effective feedback',          duration: '~35 min', icon: 'target' },
+  { id: 'hiring-skills',    category: 'people-management', title: 'Hiring & Interviewing Skills',                subtitle: 'Bias-free recruitment and structured interviewing',               duration: '~30 min', icon: 'user-check' },
+  { id: 'conflict-res',     category: 'people-management', title: 'Conflict Resolution & Mediation',             subtitle: 'De-escalate tension and facilitate productive outcomes',          duration: '~30 min', icon: 'handshake' },
+  // FINANCE
+  { id: 'finance-integrity',category: 'finance',           title: 'Expense Reporting & Financial Integrity',     subtitle: 'Accurate claims, procurement ethics and fraud prevention',        duration: '~25 min', icon: 'receipt' },
+  // CUSTOMER
+  { id: 'customer-service', category: 'customer',          title: 'Customer Service Excellence',                 subtitle: 'Delivering outstanding service and handling difficult situations', duration: '~30 min', icon: 'headphones' },
 ]
 
-export const SLIDES = [
-  {
-    heading: 'What is POSH?',
-    body: 'The Prevention, Prohibition, and Redressal of Sexual Harassment at the Workplace Act, 2013 (POSH Act) is an Indian law that guarantees every woman the right to a safe and dignified work environment. It applies to all employers — public, private, and unorganised sectors.',
-    color: '#E6F1FB',
-    iconColor: '#185FA5',
-    icon: 'book-open',
-  },
-  {
-    heading: 'What counts as sexual harassment?',
-    body: 'Under the POSH Act, sexual harassment includes:\n• Physical contact or advances of a sexual nature\n• A demand or request for sexual favours\n• Making sexually coloured remarks or jokes\n• Showing pornography or other offensive material\n• Any other unwelcome physical, verbal, or non-verbal conduct of a sexual nature',
-    color: '#FAECE7',
-    iconColor: '#993C1D',
-    icon: 'alert-triangle',
-  },
-  {
-    heading: 'Where does POSH apply?',
-    body: 'The POSH Act covers all workplaces — not just offices. This includes:\n• Office premises, factory floors, or company vehicles\n• Client sites visited during working hours\n• Work-related travel, conferences, or off-sites\n• Digital channels: emails, WhatsApp, Zoom calls, and social media',
-    color: '#EAF3DE',
-    iconColor: '#3B6D11',
-    icon: 'building',
-  },
-  {
-    heading: 'The Internal Complaints Committee (ICC)',
-    body: 'Every organisation with 10 or more employees must form an ICC.\n\nThe ICC must:\n• Be chaired by a senior woman employee\n• Include at least 2 other employees committed to women\'s causes\n• Include 1 external member from an NGO or legal background\n• Meet at least once a year',
-    color: '#EEEDFE',
-    iconColor: '#534AB7',
-    icon: 'users',
-  },
-  {
-    heading: 'How to file a complaint',
-    body: 'If you experience or witness sexual harassment:\n\n1. Report to the ICC within 3 months of the incident (extendable to 6 months in exceptional cases)\n2. Submit a written complaint with details of the incident\n3. The ICC will investigate and complete inquiry within 90 days\n4. Strict confidentiality is maintained throughout the process',
-    color: '#FAEEDA',
-    iconColor: '#854F0B',
-    icon: 'clipboard',
-  },
-  {
-    heading: 'Your responsibilities as an employee',
-    body: 'Every employee has a role in keeping the workplace safe:\n• Treat all colleagues with dignity and respect\n• Speak up if you witness harassment — bystanders matter\n• Never retaliate against anyone who files a complaint\n• Cooperate with any ICC inquiry if called upon\n• Complete your POSH training every year',
-    color: '#FBEAF0',
-    iconColor: '#993556',
-    icon: 'heart-handshake',
-  },
-]
+// ================================================================
+// SLIDES — keyed by course id
+// ================================================================
+export const SLIDES: Record<string, any[]> = {
 
-export const QUIZ = [
-  {
-    q: 'Under the POSH Act, what is the time limit for filing a complaint after an incident?',
-    options: ['1 month', '3 months', '6 months', '1 year'],
-    correct: 1,
-  },
-  {
-    q: 'Which of the following is NOT considered sexual harassment under the POSH Act?',
-    options: ['Making sexually coloured remarks', 'Showing offensive material', 'Giving a formal performance review', 'Demanding sexual favours'],
-    correct: 2,
-  },
-  {
-    q: 'Who must chair the Internal Complaints Committee (ICC)?',
-    options: ['The CEO of the company', 'Any senior employee', 'A senior woman employee', 'An external legal expert'],
-    correct: 2,
-  },
-  {
-    q: 'Does the POSH Act apply to harassment that happens during work-related travel?',
-    options: ['Yes', 'No', 'Only if it happens in the office city', 'Only for female employees'],
-    correct: 0,
-  },
-  {
-    q: 'What is the deadline for the ICC to complete an inquiry?',
-    options: ['30 days', '60 days', '90 days', '180 days'],
-    correct: 2,
-  },
-]
+  'posh-basic': [
+    { heading: 'What is POSH?', body: 'The Prevention, Prohibition, and Redressal of Sexual Harassment at the Workplace Act, 2013 is a landmark Indian law.\n\nIt guarantees every woman the right to work in a safe, secure, and dignified environment, free from any form of sexual harassment.\n\nThe Act came into force on 9 December 2013, following the Supreme Court\'s Vishaka guidelines (1997).', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'book-open' },
+    { heading: 'Who does POSH protect?', body: 'The POSH Act protects any woman who is:\n• A permanent, temporary, contractual, or probationary employee\n• An intern, apprentice, trainee, or daily wage worker\n• A domestic worker or someone in a vocational programme\n\nNote: The Act specifically protects women. Many organisations extend similar protections to all genders through internal policy.', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'users' },
+    { heading: 'What counts as sexual harassment?', body: 'Any unwelcome act of a sexual nature:\n\n• Physical contact or advances\n• Demand or request for sexual favours\n• Sexually coloured remarks or jokes\n• Showing pornography or offensive content\n• Any other unwelcome verbal, non-verbal, or physical conduct of a sexual nature\n\nIt can be direct or implied — even a pattern of subtle behaviour can constitute harassment.', color: '#FAECE7', iconColor: '#993C1D', icon: 'alert-triangle' },
+    { heading: 'Two types of harassment', body: 'Quid Pro Quo ("this for that")\nWhen authority is used to demand sexual favours in exchange for job benefits — a promotion, raise, or to avoid demotion.\n\nHostile Work Environment\nWhen repeated conduct creates an intimidating, offensive, or hostile atmosphere — even without a direct demand. Persistent inappropriate jokes, staring, or unwanted comments all qualify.', color: '#FAEEDA', iconColor: '#854F0B', icon: 'alert-triangle' },
+    { heading: 'Where does POSH apply?', body: 'The Act covers a broad definition of "workplace":\n\n• Office premises, factory floors, and company vehicles\n• Client offices visited during working hours\n• Work-related travel, conferences, and off-sites\n• Company-sponsored social events and parties\n• Digital channels: emails, WhatsApp, Zoom, and social media in a work context\n\nHarassment does not have to happen at your desk to be covered.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'building' },
+    { heading: 'The Internal Complaints Committee', body: 'Every organisation with 10+ employees must constitute an ICC.\n\nThe ICC must include:\n• A presiding officer — a senior woman employee\n• At least 2 employees committed to women\'s causes\n• 1 external member from an NGO or legal background\n\nAt least half the ICC members must be women. Members serve for a maximum of 3 years.', color: '#EEEDFE', iconColor: '#534AB7', icon: 'users' },
+    { heading: 'Filing a complaint', body: '1. Submit a written complaint to the ICC within 3 months of the incident\n2. Attach supporting documents and list witnesses\n3. ICC sends a copy to the respondent within 7 days\n4. Conciliation may be offered (no monetary settlement)\n5. Formal inquiry completed within 90 days\n6. Strict confidentiality maintained throughout\n\nThe time limit can be extended to 6 months in exceptional circumstances.', color: '#FAEEDA', iconColor: '#854F0B', icon: 'clipboard' },
+    { heading: 'Consequences & your responsibilities', body: 'If proven, consequences for the respondent include:\n• Written apology, warning, or reprimand\n• Withholding of promotion or pay rise\n• Suspension or termination\n• Salary deduction as compensation\n• Criminal proceedings under Indian law\n\nYour responsibilities:\n• Treat all colleagues with dignity\n• Speak up when you witness harassment\n• Never retaliate against someone who complains\n• Complete POSH training every year', color: '#FAECE7', iconColor: '#993C1D', icon: 'shield' },
+  ],
+
+  'bullying': [
+    { heading: 'What is workplace bullying?', body: 'Workplace bullying is repeated, unreasonable behaviour directed at an employee that creates a risk to their health and safety.\n\nIt includes:\n• Verbal abuse, humiliation, or ridicule\n• Exclusion or deliberate isolation\n• Undermining someone\'s work or reputation\n• Overloading someone with unreasonable demands\n• Deliberately withholding information they need\n\nA single incident of rude behaviour is NOT bullying — the key word is "repeated".', color: '#FAECE7', iconColor: '#993C1D', icon: 'alert-triangle' },
+    { heading: 'Bullying vs firm management', body: 'Not every tough interaction is bullying.\n\nThis IS reasonable management:\n• Setting clear performance expectations\n• Monitoring and documenting performance\n• Giving constructive feedback — even if uncomfortable\n• Implementing disciplinary procedures fairly\n\nThis IS bullying:\n• Yelling, swearing, or insulting an employee\n• Excluding someone from meetings they should attend\n• Assigning meaningless tasks to humiliate\n• Spreading malicious rumours about someone', color: '#FAEEDA', iconColor: '#854F0B', icon: 'scale' },
+    { heading: 'Forms of workplace bullying', body: 'Bullying can happen in multiple forms:\n\nVerbal: insults, belittling, shouting, threats\n\nPsychological: undermining confidence, gaslighting, taking credit for others\' work\n\nSocial: exclusion from team events, spreading rumours, silent treatment\n\nCyberbullying: offensive emails, WhatsApp messages, public humiliation on group chats\n\nPhysical intimidation: invading personal space, blocking exit, aggressive gestures', color: '#FAECE7', iconColor: '#993C1D', icon: 'alert-triangle' },
+    { heading: 'Impact on individuals and organisations', body: 'On the individual:\n• Anxiety, depression, and loss of confidence\n• Physical symptoms: insomnia, headaches, fatigue\n• Reduced job performance and engagement\n• In severe cases, post-traumatic stress\n\nOn the organisation:\n• Increased absenteeism and attrition\n• Legal liability and reputational damage\n• Toxic culture that drives talent away\n• Lost productivity and team cohesion\n\nBullying is never "just part of the culture" — it is always unacceptable.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'building' },
+    { heading: 'What to do if you are being bullied', body: '1. Document everything: dates, times, witnesses, what was said or done\n2. Tell a trusted colleague, mentor, or HR representative\n3. File a formal complaint with HR or the ICC if applicable\n4. Seek support: counselling, employee assistance programmes\n5. Know your rights: you cannot be penalised for making a genuine complaint\n\nIf you witness bullying:\n• Do not ignore it — bystander silence enables bullying\n• Check in privately with the affected colleague\n• Report what you witnessed to HR', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'clipboard' },
+    { heading: 'Organisation\'s commitment', body: 'Merit Matters is committed to a zero-tolerance policy on bullying and harassment.\n\nEvery employee has the right to:\n• Work in a safe and respectful environment\n• Report concerns without fear of retaliation\n• Have complaints investigated fairly and confidentially\n\nEvery manager has the responsibility to:\n• Model respectful behaviour at all times\n• Address bullying promptly when they become aware\n• Never ignore or dismiss a complaint\n• Create a psychologically safe team environment', color: '#EEEDFE', iconColor: '#534AB7', icon: 'heart-handshake' },
+  ],
+
+  'abac': [
+    { heading: 'What is bribery?', body: 'Bribery is offering, giving, receiving, or soliciting something of value to influence a business decision or official action.\n\nIt includes:\n• Cash payments or "commissions"\n• Gifts, hospitality, or entertainment beyond reasonable limits\n• Covering personal expenses (travel, meals, holidays)\n• Favours, discounts, or preferential treatment\n• Charitable donations made to obtain a business advantage\n\nBribery is illegal in India under the Prevention of Corruption Act and in most countries globally.', color: '#FAECE7', iconColor: '#993C1D', icon: 'scale' },
+    { heading: 'What is corruption?', body: 'Corruption is the abuse of entrusted power for private gain. In the workplace this includes:\n\n• Fraud: falsifying records, invoices, or expense claims\n• Embezzlement: misappropriating company funds\n• Conflict of interest: awarding contracts to relatives\n• Kickbacks: receiving a share of a vendor\'s profit\n• Money laundering: concealing the origins of illegally obtained money\n\nCorruption harms organisations, damages reputations, and undermines fair competition.', color: '#FAEEDA', iconColor: '#854F0B', icon: 'alert-triangle' },
+    { heading: 'The gifts & hospitality rule', body: 'Not all gifts are bribes — but intent and value matter.\n\nAcceptable:\n• Low-value, infrequent gifts (branded merchandise, sweets, calendars)\n• Meals in the normal course of business\n• Hospitality that is proportionate and transparent\n\nNot acceptable:\n• Gifts above the company threshold (typically ₹2,000–5,000)\n• Cash or cash equivalents\n• Gifts during a tender or procurement process\n• Gifts given or received in secret\n\nWhen in doubt: declare it, decline it, or ask your manager.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'clipboard' },
+    { heading: 'Red flags — recognising risk', body: 'Be alert to these warning signs:\n\n• A vendor who insists on cash payments\n• Unusually high "facilitation fees" or "agent commissions"\n• Requests to approve invoices without supporting documentation\n• Pressure to bypass normal approval processes\n• A business partner who asks you to keep an arrangement "between us"\n• Contracts awarded without competitive tender\n\nIf something feels wrong, it probably is. You are never obligated to participate in corrupt activity.', color: '#FAECE7', iconColor: '#993C1D', icon: 'alert-triangle' },
+    { heading: 'Your obligations', body: 'Every employee must:\n\n• Never offer, promise, or give a bribe — directly or through a third party\n• Never accept a bribe or improper advantage\n• Declare all gifts received above the threshold\n• Maintain accurate and honest records\n• Report suspected bribery or corruption through the whistleblower channel\n• Cooperate fully with any investigation\n\nYou will never be penalised for refusing to pay a bribe — even if a business deal is lost as a result.', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'shield' },
+    { heading: 'Consequences of non-compliance', body: 'For individuals:\n• Criminal prosecution and imprisonment\n• Personal fines and civil liability\n• Termination of employment\n• Permanent damage to professional reputation\n\nFor the organisation:\n• Heavy regulatory fines\n• Debarment from government contracts\n• Reputational damage and loss of client trust\n• Investigations by enforcement agencies (CBI, ED, Serious Fraud Office)\n\nNo business objective justifies corrupt behaviour.', color: '#FAECE7', iconColor: '#993C1D', icon: 'landmark' },
+  ],
+
+  'data-privacy': [
+    { heading: 'Why data privacy matters', body: 'Every organisation handles personal data — employee records, customer information, financial details. When this data is mishandled:\n\n• Individuals suffer identity theft, financial loss, and reputational harm\n• Organisations face regulatory fines and legal action\n• Trust — with employees and customers — is destroyed\n\nTwo key laws govern data privacy in India\'s context:\n• India\'s Digital Personal Data Protection (DPDP) Act, 2023\n• GDPR (General Data Protection Regulation) — relevant for companies dealing with EU citizens', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'lock' },
+    { heading: 'What is personal data?', body: 'Personal data is any information that can identify a person, directly or indirectly.\n\nExamples:\n• Name, address, phone number, email\n• Aadhaar number, PAN, passport details\n• Salary and bank account information\n• Health and medical records\n• Biometric data (fingerprints, face scans)\n• Location data, IP addresses\n• Photos and videos\n\nSensitive personal data (health, financials, biometrics) gets extra protection under law.', color: '#FAEEDA', iconColor: '#854F0B', icon: 'file-text' },
+    { heading: 'Key principles of data protection', body: 'Under DPDP and GDPR, personal data must be:\n\n• Collected for a specific, clear purpose\n• Not used for anything beyond that purpose\n• Kept only as long as necessary, then deleted\n• Protected with appropriate security measures\n• Accurate and kept up to date\n• Handled transparently — people must know their data is being collected\n• Collected only with valid consent (where required)', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'shield' },
+    { heading: 'Your rights & obligations', body: 'Individuals have the right to:\n• Know what data is collected about them\n• Correct inaccurate data\n• Delete data (right to be forgotten)\n• Withdraw consent at any time\n\nAs an employee handling data you must:\n• Access only data you are authorised to see\n• Never share personal data without authorisation\n• Use strong passwords and lock your screen\n• Report data breaches immediately to IT/your manager\n• Never store customer data on personal devices', color: '#EEEDFE', iconColor: '#534AB7', icon: 'lock' },
+    { heading: 'Common data breaches to avoid', body: 'Most breaches are caused by human error:\n\n• Sending an email to the wrong recipient\n• Leaving a laptop or phone unattended in public\n• Clicking a phishing link\n• Using weak or reused passwords\n• Sharing login credentials with a colleague\n• Disposing of printed documents without shredding\n• Downloading company data to a personal USB drive\n\nA data breach must be reported within 72 hours under GDPR. Under DPDP, it must be reported to the Data Protection Board.', color: '#FAECE7', iconColor: '#993C1D', icon: 'alert-triangle' },
+    { heading: 'Consequences of non-compliance', body: 'Under DPDP Act (India):\n• Fines up to ₹250 crore for serious breaches\n• ₹50–200 crore for failure to notify breaches\n\nUnder GDPR:\n• Fines up to €20 million or 4% of global annual turnover\n\nBeyond fines:\n• Criminal liability for wilful data misuse\n• Termination of employment\n• Loss of customer trust and business\n\nData protection is everyone\'s responsibility — not just the IT department\'s.', color: '#FAECE7', iconColor: '#993C1D', icon: 'landmark' },
+  ],
+
+  'code-of-conduct': [
+    { heading: 'What is a Code of Conduct?', body: 'A Code of Conduct defines the standards of professional behaviour expected from every person in our organisation — regardless of role or seniority.\n\nIt covers:\n• How we treat each other\n• How we represent the company\n• How we handle conflicts of interest\n• How we use company resources\n• How we communicate externally\n\nThe Code is not about policing behaviour — it is about creating a shared understanding of what "doing the right thing" looks like here.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'clipboard' },
+    { heading: 'Professional conduct & respect', body: 'We expect every employee to:\n\n• Treat colleagues, clients, and vendors with dignity and courtesy\n• Communicate honestly and transparently\n• Respect differences in opinion, background, and working style\n• Maintain professionalism in all written and verbal communication\n• Protect the organisation\'s reputation in public and on social media\n• Represent the company values in every client interaction\n\nA simple test: would you be comfortable if your manager could see exactly what you are doing and why?', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'users' },
+    { heading: 'Conflicts of interest', body: 'A conflict of interest arises when personal interests could compromise your professional judgment.\n\nExamples:\n• Hiring a relative without declaring the relationship\n• Running a competing business while employed here\n• Accepting large gifts from a vendor whose contract you manage\n• Making investment decisions based on inside information\n\nWhat to do:\n• Disclose any potential conflict to your manager or HR promptly\n• Recuse yourself from decisions where you have a personal interest\n• When in doubt, declare it — transparency protects you', color: '#FAEEDA', iconColor: '#854F0B', icon: 'scale' },
+    { heading: 'Use of company resources', body: 'Company resources — laptops, phones, internet, vehicles, stationery — are for business use.\n\nLimited personal use is generally acceptable, but you must never:\n• Use company equipment for a personal business\n• Download unlicensed software\n• Store personal files or data on company servers\n• Allow non-employees to use company systems\n• Use the company\'s name or brand without authorisation\n\nRemember: activity on company devices can be monitored. Treat company property with care.', color: '#EEEDFE', iconColor: '#534AB7', icon: 'laptop' },
+    { heading: 'Confidentiality & intellectual property', body: 'Information you access at work is confidential. This includes:\n\n• Client lists and business strategy\n• Financial data and forecasts\n• Employee personal information\n• Proprietary processes and methodologies\n• Software, training content, and creative work\n\nYou must:\n• Not share confidential information with unauthorised parties\n• Not use confidential information for personal gain\n• Protect confidentiality even after leaving the organisation\n• Report any accidental disclosure immediately', color: '#FAECE7', iconColor: '#993C1D', icon: 'lock' },
+  ],
+
+  'culture-dei': [
+    { heading: 'What is DEI?', body: 'Diversity, Equity, and Inclusion — three distinct but connected ideas:\n\nDiversity: the presence of differences — gender, age, ethnicity, disability, sexual orientation, religion, socio-economic background, thinking style.\n\nEquity: ensuring fair treatment, access, and opportunity — acknowledging that people start from different places and may need different support.\n\nInclusion: creating an environment where all individuals feel valued, respected, and fully able to contribute.\n\nDiversity is being invited to the party. Inclusion is being asked to dance.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'users' },
+    { heading: 'Why DEI matters', body: 'Research consistently shows that diverse and inclusive organisations:\n\n• Make better decisions (more perspectives = fewer blind spots)\n• Innovate more effectively\n• Attract and retain top talent\n• Serve customers more empathetically\n• Outperform less diverse peers financially\n\nBeyond performance: every person deserves to work somewhere they are respected and can bring their whole self to work. DEI is both a business imperative and the right thing to do.', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'star' },
+    { heading: 'Unconscious bias', body: 'Unconscious biases are automatic, unintentional mental shortcuts that affect our judgments about people.\n\nCommon biases in the workplace:\n• Affinity bias: favouring people similar to ourselves\n• Halo/horn effect: letting one trait colour our overall impression\n• Attribution bias: crediting success to talent for some, luck for others\n• Gender bias: assuming certain roles suit certain genders\n\nYou cannot eliminate bias entirely — but you can:\n• Slow down decisions and ask "why am I thinking this?"\n• Seek diverse input before concluding\n• Use structured, criteria-based processes for hiring and promotion', color: '#FAEEDA', iconColor: '#854F0B', icon: 'alert-triangle' },
+    { heading: 'Inclusive language', body: 'Language shapes culture. Inclusive language makes people feel seen.\n\nPractical tips:\n• Use gender-neutral terms where possible: "team" not "guys", "chair" not "chairman"\n• Respect preferred pronouns (she/her, he/him, they/them)\n• Avoid assumptions about family structure or personal life\n• Do not make jokes about ethnicity, religion, disability, or gender\n• Say "a person with a disability" rather than "a disabled person" (person-first language)\n\nIf you make a mistake — correct it, apologise briefly, and move on.', color: '#EEEDFE', iconColor: '#534AB7', icon: 'pen-line' },
+    { heading: 'Being an ally', body: 'An ally is someone who actively supports colleagues from under-represented groups — even when it is uncomfortable.\n\nHow to be an ally:\n• Amplify voices that are being talked over or ignored\n• Speak up when you witness bias or exclusion — in the moment\n• Mentor or sponsor colleagues from different backgrounds\n• Check that meeting dynamics are equitable (who speaks? who is heard?)\n• Listen to learn, not to defend\n\nAllyship is not a label — it is a daily practice.', color: '#FBEAF0', iconColor: '#993556', icon: 'heart-handshake' },
+  ],
+
+  'hr-policies': [
+    { heading: 'Your employment relationship', body: 'Your employment with the organisation is governed by:\n• Your appointment letter and employment contract\n• The Employee Handbook / HR Policy Manual\n• Applicable Indian labour laws (Shops & Establishment Act, PF Act, etc.)\n\nKey documents to know:\n• Appointment letter: your role, CTC, and joining terms\n• Non-Disclosure Agreement (NDA): confidentiality obligations\n• Code of Conduct: behavioural standards\n\nIf you ever have questions about your employment terms, reach out to HR — never assume.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'file-text' },
+    { heading: 'Leave policy', body: 'Most organisations in India offer:\n\n• Earned Leave (EL): typically 15–21 days/year, can be carried forward\n• Casual Leave (CL): 7–12 days/year, for unplanned personal needs\n• Sick Leave (SL): 7–12 days/year, with medical certificate for extended illness\n• Public / National Holidays: as per the state government list\n• Maternity Leave: 26 weeks for first two children (Maternity Benefit Act)\n• Paternity Leave: as per company policy\n\nAlways apply for leave in advance through the official system. Uninformed absence may be treated as Loss of Pay (LOP).', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'calendar' },
+    { heading: 'Attendance & punctuality', body: 'Attendance is tracked and directly impacts your performance record.\n\n• Office hours and flexi-time policies vary — confirm with your manager\n• Mark attendance accurately — proxy attendance is a disciplinary offence\n• Late arrivals and early departures should be communicated to your manager\n• Work from home (WFH) guidelines: follow your team\'s protocol\n• Overtime: confirm with HR whether you are eligible for overtime pay or compensation-off\n\nConsistent punctuality reflects professionalism and respect for your team.', color: '#FAEEDA', iconColor: '#854F0B', icon: 'clock' },
+    { heading: 'Grievance & disciplinary process', body: 'Grievance Process (when you have a complaint):\n1. Raise the issue informally with your manager first\n2. If unresolved, submit a written grievance to HR\n3. HR investigates and communicates a resolution within 15–30 days\n4. Right of appeal if unsatisfied with the outcome\n\nDisciplinary Process (when a policy is breached):\n1. Show-cause notice or warning letter\n2. Opportunity to respond and present your side\n3. Inquiry committee reviews the facts\n4. Action taken based on severity: warning → suspension → termination\n\nBoth processes are confidential and fair.', color: '#EEEDFE', iconColor: '#534AB7', icon: 'clipboard' },
+  ],
+
+  'workplace-safety': [
+    { heading: 'Why safety is everyone\'s job', body: 'Workplace safety is not just the responsibility of the EHS team — every employee has a duty of care.\n\nIn India, workplace safety is governed by:\n• The Factories Act, 1948 (for manufacturing)\n• Occupational Safety, Health and Working Conditions Code, 2020\n• Buildings and Construction Workers Act\n\nA safe workplace:\n• Prevents injury, illness, and death\n• Reduces absenteeism and costs\n• Builds employee morale and trust\n• Protects the organisation from legal liability', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'shield' },
+    { heading: 'Hazard identification', body: 'A hazard is anything that has the potential to cause harm. Common workplace hazards:\n\nPhysical: slippery floors, unguarded machinery, electrical faults, poor lighting\nErgonomic: incorrect posture, repetitive strain, poorly designed workstations\nChemical: cleaning agents, solvents, dust\nBiological: bacteria, viruses, contaminated surfaces\nPsychosocial: stress, overwork, bullying\n\nYour first responsibility: identify and report hazards before they cause harm. Never ignore a safety risk — report it immediately.', color: '#FAEEDA', iconColor: '#854F0B', icon: 'alert-triangle' },
+    { heading: 'Emergency procedures', body: 'Know what to do before an emergency happens:\n\nFire:\n1. Activate the nearest fire alarm\n2. Call emergency services (112)\n3. Evacuate via the nearest fire exit — do NOT use the lift\n4. Assemble at the designated muster point\n5. Account for all team members\n\nMedical emergency:\n1. Do not move the injured person unless there is immediate danger\n2. Call the first aider or emergency services immediately\n3. Stay with the person until help arrives\n\nKnow where: fire extinguishers, first aid kits, emergency exits, and muster points are located.', color: '#FAECE7', iconColor: '#993C1D', icon: 'alert-triangle' },
+    { heading: 'Personal Protective Equipment (PPE)', body: 'PPE is the last line of defence — use it whenever required.\n\n• Hard hats: on construction sites or where falling objects are a risk\n• Safety goggles: when working with chemicals or machinery\n• Gloves: chemical handling, sharp materials\n• High-visibility vests: in areas with moving vehicles\n• Ear protection: in high-noise environments\n• Safety footwear: on factory floors or construction sites\n\nRules:\n• Inspect PPE before each use\n• Never use damaged or expired PPE\n• Store PPE correctly after use\n• Report faulty PPE to your supervisor immediately', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'hard-hat' },
+  ],
+
+  'mental-health': [
+    { heading: 'Mental health at work', body: 'Mental health includes our emotional, psychological, and social wellbeing. It affects how we think, feel, and act at work.\n\n1 in 5 adults experiences a mental health condition in any given year. Yet most people never seek help due to stigma.\n\nCommon workplace mental health challenges:\n• Stress and burnout\n• Anxiety and worry\n• Depression\n• Adjustment issues after major change\n• Compassion fatigue (especially in service roles)\n\nMental health conditions are real, common, and treatable. They are not a sign of weakness.', color: '#EEEDFE', iconColor: '#534AB7', icon: 'brain' },
+    { heading: 'Recognising burnout', body: 'Burnout is a state of chronic stress that leads to physical and emotional exhaustion.\n\nEarly signs:\n• Dreading work and feeling cynical about it\n• Difficulty concentrating or making decisions\n• Feeling detached from your team\n• Physical symptoms: headaches, fatigue, frequent illness\n• Declining performance despite long hours\n\nBurnout is not "just tiredness" — it is a serious condition that requires intervention.\n\nIf you recognise these signs in yourself or a colleague, take them seriously and seek support.', color: '#FAEEDA', iconColor: '#854F0B', icon: 'alert-triangle' },
+    { heading: 'Building personal resilience', body: 'Resilience is the ability to adapt and bounce back from adversity. It can be built.\n\n• Physical foundations: regular sleep, exercise, and nutrition\n• Set boundaries: learn to say no to unreasonable demands\n• Mindfulness: 10 minutes of focused breathing can reduce cortisol significantly\n• Social connection: don\'t isolate — share challenges with trusted people\n• Purpose: connect your daily work to something meaningful\n• Recovery time: rest is not laziness — it is a performance strategy\n\nSmall daily habits compound into significant resilience over time.', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'heart-pulse' },
+    { heading: 'Supporting a colleague', body: 'If you are concerned about a colleague:\n\nDO:\n• Have a private, non-judgmental conversation\n• Ask open questions: "How are you really doing?"\n• Listen actively without trying to fix everything\n• Share information about available support\n• Follow up — one conversation is rarely enough\n\nDO NOT:\n• Tell them to "just think positively"\n• Share their information with others without permission\n• Push them to open up before they are ready\n• Minimise their experience ("everyone gets stressed")\n\nYou do not need to have all the answers. Showing you care is enough to start.', color: '#FBEAF0', iconColor: '#993556', icon: 'heart-handshake' },
+  ],
+
+  'biz-comm': [
+    { heading: 'The fundamentals of business communication', body: 'Effective business communication is clear, concise, correct, complete, and courteous — the "5 Cs".\n\nClear: say exactly what you mean — avoid jargon\nConcise: use as few words as needed — no padding\nCorrect: facts, grammar, spelling, and tone\nComplete: include everything the reader needs to act\nCourteous: professional and respectful, even in difficult conversations\n\nEvery communication — email, WhatsApp, presentation, or phone call — represents you and your organisation.', color: '#EEEDFE', iconColor: '#534AB7', icon: 'mail' },
+    { heading: 'Writing effective emails', body: 'Subject line: specific and actionable\n• Bad: "Follow-up"\n• Good: "Action needed: Q3 report by 5 PM Friday"\n\nOpening: state your purpose in the first sentence\nBody: one idea per paragraph, use bullet points for lists\nClosing: clear call to action — what do you need, by when?\nSign-off: "Best regards" for formal, "Thanks" for internal\n\nBefore you send:\n• Have you answered: what, why, and what next?\n• Could this be misread? Read it as the recipient would.\n• Is the tone appropriate for the relationship?', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'mail' },
+    { heading: 'Email etiquette', body: 'DO:\n• Reply within 24 hours (48 for non-urgent)\n• Use "Reply All" only when everyone genuinely needs to see it\n• Set an out-of-office when unavailable\n• Use BCC to protect recipient privacy in mass emails\n• Proofread before sending\n\nDO NOT:\n• Send emails in CAPITALS — it reads as shouting\n• Forward confidential information carelessly\n• Mark everything as "high priority" — it loses meaning\n• Use company email for personal matters\n• Send emails in anger — write the draft, wait an hour, then decide', color: '#FAEEDA', iconColor: '#854F0B', icon: 'mail' },
+    { heading: 'Professional verbal communication', body: 'In meetings:\n• Prepare — know why you are there and what you need\n• Listen as much as you speak\n• Acknowledge other viewpoints before disagreeing\n• Summarise decisions and action points at the end\n\nOn calls:\n• Introduce yourself if the other person may not recognise your number\n• Speak clearly, at a moderate pace\n• Confirm next steps before hanging up\n\nIn difficult conversations:\n• Separate the problem from the person\n• Use "I feel..." statements rather than "You always..."\n• Focus on facts, not personality', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'phone' },
+  ],
+
+  'english-grammar': [
+    { heading: 'Why grammar matters', body: 'Grammar is the difference between:\n\n"Let\'s eat, Grandma!" — a lovely dinner invitation\nand\n"Let\'s eat Grandma!" — a criminal proposal\n\nA well-placed comma literally saves lives.\n\nGrammar is the architecture of communication. Sharp grammar means your ideas land clearly, your emails inspire confidence, and you are taken seriously as a professional.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'star' },
+    { heading: 'The 8 parts of speech', body: '1. Noun — person, place, thing, idea: Priya, Mumbai, laptop\n2. Pronoun — replaces a noun: she, it, they, we\n3. Verb — action or state: run, think, is, became\n4. Adjective — describes a noun: quick, large, brilliant\n5. Adverb — describes a verb or adjective: quickly, very, quite\n6. Preposition — shows relationship: in, on, under, between\n7. Conjunction — connects: and, but, because, although\n8. Interjection — emotion: Wow! Oh! Oops!', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'book-open' },
+    { heading: 'Subject-Verb Agreement', body: 'Subject and verb must agree in number.\n\nThe dog barks. / The dogs bark.\n\nCommon traps:\n• "The team is winning." NOT "The team are winning."\n• "Everyone has a chance." NOT "Everyone have a chance."\n• "Neither of them is ready." NOT "Neither of them are ready."\n• "The data shows..." NOT "The data show..." (data is now widely treated as singular)\n\nWords like everyone, someone, nobody, each — always take a singular verb.', color: '#FAEEDA', iconColor: '#854F0B', icon: 'alert-triangle' },
+    { heading: 'Articles — A, An, and The', body: 'A / An (indefinite) — first mention or general reference\n"I met a doctor." / "She is an engineer."\n\nThe (definite) — specific reference\n"The doctor I met was helpful."\n\nA vs An: it is about the SOUND, not the spelling.\n• A cat, a university (yoo-sound), a European\n• An apple, an hour (H is silent), an MBA\n\nNo article needed for: general plurals ("Cats are curious.") and uncountable nouns used generally ("Water is essential.")', color: '#EEEDFE', iconColor: '#534AB7', icon: 'book-open' },
+    { heading: 'Commonly confused words', body: 'Their / There / They\'re\n• Their = belonging to them | There = a place | They\'re = they are\n\nYour / You\'re\n• Your = belonging to you | You\'re = you are\n\nIts / It\'s\n• Its = belonging to it | It\'s = it is\n\nAffect / Effect\n• Affect = verb (The noise affected my focus.)\n• Effect = noun (The effect was immediate.)\n\nThen / Than\n• Then = time (first this, then that)\n• Than = comparison (better than expected)', color: '#FAECE7', iconColor: '#993C1D', icon: 'alert-triangle' },
+    { heading: 'Active vs Passive Voice', body: 'Active: subject does the action — direct and confident.\nPassive: subject receives the action — often wordy.\n\nActive: "The manager approved the proposal."\nPassive: "The proposal was approved by the manager."\n\nUse passive when:\n• The doer is unknown: "The window was broken."\n• Objectivity is needed: "The sample was tested."\n\nIn most business writing, active voice is preferred — shorter, clearer, stronger.\n\nTest: if you can add "by zombies" after the verb, it\'s passive. "The report was written... by zombies." Passive!', color: '#FAEEDA', iconColor: '#854F0B', icon: 'pen-line' },
+  ],
+
+  'presentation': [
+    { heading: 'The anatomy of a great presentation', body: 'Every great presentation has three parts:\n\n1. Opening (10%): hook the audience — a story, question, statistic, or bold statement. State what they will gain by listening.\n\n2. Body (80%): deliver 3–5 key points with supporting evidence. Use examples, visuals, and stories. Do not try to say everything.\n\n3. Closing (10%): summarise the key takeaway, state what you want the audience to do next, and end memorably.\n\nIf you could only say one thing, what would it be? Build your entire presentation around that.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'presentation' },
+    { heading: 'Slide design principles', body: 'Less is more.\n\n• One idea per slide — if you have two ideas, make two slides\n• Maximum 6 lines of text per slide\n• Font size minimum 24pt — if it needs to be smaller, cut the text\n• Use images and diagrams instead of bullet lists where possible\n• Consistent fonts, colours, and layout throughout\n• High contrast: dark text on light background (or vice versa)\n• Avoid clip art and default templates — they undermine credibility\n\nYour slides support you — they are not a script. If you read every word off the slide, your audience will stop listening to you.', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'presentation' },
+    { heading: 'Confident delivery', body: 'Preparation:\n• Know your material well enough to present without notes\n• Rehearse at least twice out loud — not in your head\n• Time yourself — most people speak slower under pressure\n\nDelivery:\n• Make eye contact — scan the room, not just your friends\n• Vary your pace and volume for emphasis\n• Pause deliberately — silence is powerful\n• Avoid filler words: "um", "uh", "basically", "you know"\n• Stand with feet shoulder-width apart — it projects confidence\n\nNervousness is normal — even experienced speakers feel it. It means you care.', color: '#FAEEDA', iconColor: '#854F0B', icon: 'target' },
+  ],
+
+  'performance-mgmt': [
+    { heading: 'What is performance management?', body: 'Performance management is an ongoing process — not a once-a-year review.\n\nIt includes:\n• Setting clear, measurable goals (SMART goals)\n• Regular one-on-one conversations\n• Providing timely, specific feedback\n• Identifying development needs\n• Recognising strong performance\n• Addressing underperformance early\n\nThe purpose is not to rank or judge people — it is to help every employee do their best work and grow in their career.', color: '#FDF3DC', iconColor: '#7a5a1a', icon: 'target' },
+    { heading: 'Setting SMART goals', body: 'SMART goals are:\n\nSpecific: What exactly needs to be achieved?\nMeasurable: How will you know it is done?\nAchievable: Is it realistic given current resources?\nRelevant: Does it connect to team and business objectives?\nTime-bound: By when?\n\nVague: "Improve customer satisfaction"\nSMART: "Achieve a CSAT score of 4.5/5 in Q3 by implementing the new response protocol by 1 July"\n\nGoals set together are owned together.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'target' },
+    { heading: 'Giving effective feedback', body: 'The SBI model: Situation → Behaviour → Impact\n\n• Situation: describe the specific context\n• Behaviour: describe what you observed (not personality)\n• Impact: explain the effect it had\n\nExample:\n"In yesterday\'s client meeting (Situation), you interrupted the client twice while they were explaining their concern (Behaviour). This seemed to frustrate them and they became less engaged (Impact)."\n\nNOT: "You\'re always rude with clients."\n\nFeedback is a gift — deliver it promptly, privately (for negatives), and with good intent.', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'users' },
+    { heading: 'Handling underperformance', body: 'Address underperformance early — waiting makes it worse.\n\nStep 1: Have a direct, private conversation. Describe the gap clearly.\nStep 2: Understand the root cause — is it skill, will, or circumstance?\nStep 3: Agree a clear improvement plan with timelines\nStep 4: Check in regularly — support, don\'t surveil\nStep 5: Document conversations (dates, what was discussed, commitments)\nStep 6: If no improvement, escalate to formal process with HR support\n\nThe goal is always to help the person succeed — not to build a case for termination.', color: '#FAEEDA', iconColor: '#854F0B', icon: 'clipboard' },
+  ],
+
+  'hiring-skills': [
+    { heading: 'Why structured hiring matters', body: 'Unstructured interviews are surprisingly poor predictors of job performance — studies show they are barely better than chance.\n\nStructured hiring:\n• Uses consistent, pre-planned questions for all candidates\n• Evaluates against defined criteria\n• Involves multiple interviewers\n• Reduces the influence of unconscious bias\n\nThe goal of hiring is not to find someone you like — it is to find someone who will succeed in the role and contribute to the team.', color: '#FDF3DC', iconColor: '#7a5a1a', icon: 'user-check' },
+    { heading: 'Defining the role before you hire', body: 'Before writing a job description:\n\n• Define the 3–5 outcomes the person must achieve in their first year\n• List the skills and behaviours required (must-have vs nice-to-have)\n• Identify the culture fit factors — what kind of working environment is this?\n• Agree the compensation range before starting\n\nA clear role definition:\n• Attracts the right candidates\n• Gives interviewers consistent criteria\n• Sets the new hire up for success from day one\n\nHiring someone into an undefined role is setting them up to fail.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'file-text' },
+    { heading: 'Bias-free interviewing', body: 'Common biases in interviews:\n\n• Halo effect: one strong answer colours your view of everything else\n• Similarity bias: favouring candidates who remind you of yourself\n• First impression bias: letting the first 5 minutes override the next 55\n• Contrast effect: judging a good candidate as weaker after an exceptional one\n\nHow to reduce bias:\n• Use the same questions for every candidate\n• Take notes during the interview, not after\n• Score independently before comparing notes\n• Diverse interview panel — different people catch different things\n• Focus on evidence of capability, not personality fit', color: '#FAEEDA', iconColor: '#854F0B', icon: 'alert-triangle' },
+  ],
+
+  'conflict-res': [
+    { heading: 'Why conflict is normal', body: 'Conflict is a natural result of people working together — different priorities, communication styles, and perspectives will always create friction.\n\nConflict is not the problem. Unresolved or mishandled conflict is.\n\nWell-managed conflict:\n• Surfaces issues before they become crises\n• Strengthens relationships through honest dialogue\n• Leads to better decisions through diverse perspectives\n\nAvoiding conflict entirely often makes it worse — small resentments compound into major ruptures.', color: '#FDF3DC', iconColor: '#7a5a1a', icon: 'users' },
+    { heading: 'Types of workplace conflict', body: 'Task conflict: disagreement about work content, goals, or approach — can be healthy if managed well\n\nProcess conflict: disagreement about how work should be done — often solvable with clear processes\n\nRelationship conflict: personal friction, personality clashes — most damaging and hardest to resolve\n\nRole conflict: confusion about responsibilities and boundaries — usually solvable with clear role definitions\n\nIdentifying the type of conflict helps you choose the right intervention. Not all conflicts need mediation — some just need a clear conversation.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'scale' },
+    { heading: 'Conflict resolution steps', body: '1. Create space: choose a private, calm setting — not in the heat of the moment\n2. Set the tone: "I want to understand your perspective and find a solution we both feel good about"\n3. Each person speaks uninterrupted: focus on impact, not blame\n4. Identify shared interests: what does each person actually need?\n5. Generate options together: brainstorm without committing\n6. Agree on a way forward: be specific about who does what, by when\n7. Follow up: check in after 2 weeks to see if the resolution is holding\n\nIf direct resolution fails, involve HR for mediation.', color: '#E6F4EC', iconColor: '#2D7D46', icon: 'handshake' },
+  ],
+
+  'finance-integrity': [
+    { heading: 'Why financial integrity matters', body: 'Financial integrity means being honest and accurate in every financial transaction and record.\n\nIt matters because:\n• Company finances fund salaries, operations, and growth\n• Inaccurate records mislead management decisions\n• Financial fraud has legal consequences for individuals and the organisation\n• Auditors, regulators, and investors rely on accurate data\n\nEvery employee who raises an invoice, submits an expense, or approves a payment is a custodian of the organisation\'s financial integrity.', color: '#E6F4EC', iconColor: '#1B6B4A', icon: 'receipt' },
+    { heading: 'Expense reporting', body: 'When claiming expenses:\n\nDO:\n• Submit claims within the company\'s stipulated timeframe\n• Attach original receipts for all claims above the threshold\n• Claim only actual business expenses — not personal ones\n• Use the correct expense category codes\n• Get pre-approval for large or unusual expenses\n\nDO NOT:\n• Split large expenses to avoid approval thresholds\n• Claim personal expenses as business expenses\n• Submit the same receipt twice\n• Allow others to submit expenses on your account\n\nRemember: expense claims are subject to audit at any time.', color: '#FAEEDA', iconColor: '#854F0B', icon: 'receipt' },
+    { heading: 'Procurement ethics', body: 'When procuring goods or services:\n\n• Follow the competitive bidding process — get at least 3 quotes for purchases above the threshold\n• Declare any personal relationship with a vendor before being involved in their evaluation\n• Never allow a vendor to offer gifts, hospitality, or discounts intended to influence the award\n• Document vendor selection decisions with clear rationale\n• Raise a purchase order before the goods or services are delivered\n• Never approve a vendor invoice without confirming delivery\n\nCutting procurement corners costs organisations millions every year.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'landmark' },
+  ],
+
+  'customer-service': [
+    { heading: 'What excellent customer service looks like', body: 'Excellent customer service is not just about being polite — it is about creating experiences that make people feel valued and want to come back.\n\nThe four pillars:\n1. Responsiveness: reply quickly, even if just to acknowledge\n2. Reliability: do what you say you will do, when you say you will do it\n3. Empathy: understand and acknowledge the customer\'s feelings\n4. Resolution: solve the problem — and go slightly beyond what was expected\n\nCustomers remember how you made them feel more than what you said.', color: '#FBEAF0', iconColor: '#993556', icon: 'headphones' },
+    { heading: 'Active listening', body: 'Most customer frustration comes from feeling unheard.\n\nActive listening techniques:\n• Give your full attention — no multitasking\n• Let the customer finish speaking before responding\n• Reflect back: "So what I\'m hearing is..." — confirms understanding\n• Ask clarifying questions: "Can you tell me more about...?"\n• Acknowledge their emotion: "I completely understand why that\'s frustrating"\n• Take notes — it shows you are taking them seriously\n\nYou do not need to agree with a customer to make them feel heard. Feeling heard is often 80% of the resolution.', color: '#E8F2FA', iconColor: '#1B4F8A', icon: 'headphones' },
+    { heading: 'Handling difficult customers', body: 'When a customer is angry or unreasonable:\n\n1. Stay calm — their anger is not personal (usually)\n2. Acknowledge their frustration first — before explaining anything\n3. Apologise for their experience — not necessarily for fault: "I\'m sorry you\'ve had this experience"\n4. Focus on what you CAN do, not what you can\'t\n5. Offer a clear next step with a timeframe\n6. If the situation escalates, involve a senior colleague — do not match aggression\n\nThe LAST thing a frustrated customer wants is a policy lecture. Lead with empathy, follow with solutions.', color: '#FAEEDA', iconColor: '#854F0B', icon: 'alert-triangle' },
+    { heading: 'Going beyond service to loyalty', body: 'Satisfaction keeps customers. Delight creates loyalty.\n\nSimple ways to go beyond:\n• Follow up after resolving an issue to confirm satisfaction\n• Remember preferences and personalise interactions\n• Proactively share information the customer will find useful\n• Admit mistakes quickly and fix them faster\n• Thank customers genuinely — not with a scripted line\n\nA customer who had a problem that was brilliantly resolved is often more loyal than one who never had a problem.\n\nLoyalty is built one interaction at a time.', color: '#FBEAF0', iconColor: '#993556', icon: 'heart-handshake' },
+  ],
+}
+
+// ================================================================
+// QUESTION BANKS — large pools, randomly sampled each attempt
+// ================================================================
+export const QUESTION_BANKS: Record<string, any[]> = {
+
+  'posh-basic': [
+    { q: 'Under the POSH Act, what is the initial time limit to file a complaint?', options: ['1 month', '3 months', '6 months', '12 months'], correct: 1 },
+    { q: 'Who must chair the ICC?', options: ['CEO', 'HR Manager', 'A senior woman employee', 'An external lawyer'], correct: 2 },
+    { q: 'Which of these is NOT sexual harassment under POSH?', options: ['Sexual jokes', 'Showing offensive material', 'A formal performance review', 'Demanding sexual favours'], correct: 2 },
+    { q: 'POSH applies to which workplaces?', options: ['Only large corporates', 'Only government offices', 'All organisations with 10+ employees', 'Only manufacturing units'], correct: 2 },
+    { q: 'What is "Quid Pro Quo" harassment?', options: ['A hostile work environment', 'Demanding favours for job benefits', 'Spreading rumours', 'Physical intimidation'], correct: 1 },
+    { q: 'How long does the ICC have to complete its inquiry?', options: ['30 days', '60 days', '90 days', '120 days'], correct: 2 },
+    { q: 'Does POSH cover harassment during work-related travel?', options: ['Yes', 'No', 'Only domestic travel', 'Only international travel'], correct: 0 },
+    { q: 'If a complaint cannot be proven, it is automatically treated as:', options: ['A false complaint', 'Grounds for punishing the complainant', 'Neither false nor proven — no punitive action without malicious intent', 'A withdrawn complaint'], correct: 2 },
+    { q: 'Which is a valid ICC interim relief during inquiry?', options: ['Immediate termination of respondent', 'Transfer of complainant or respondent', 'Publishing names of both parties', 'Suspending the inquiry'], correct: 1 },
+    { q: 'The minimum number of members in an ICC is:', options: ['2', '3', '4', '5'], correct: 2 },
+    { q: 'At least ___ of ICC members must be women:', options: ['One-third', 'Half', 'Two-thirds', 'All'], correct: 1 },
+    { q: 'POSH applies to digital harassment (WhatsApp, email)?', options: ['Yes', 'No', 'Only official email', 'Only during office hours'], correct: 0 },
+    { q: 'What is the maximum leave the ICC can grant a complainant during inquiry?', options: ['1 month', '2 months', '3 months', '6 months'], correct: 2 },
+    { q: 'Which Act came into force on 9 December 2013?', options: ['Labour Code', 'POSH Act', 'Shops & Establishment Act', 'Factories Act'], correct: 1 },
+    { q: 'A complaint can be extended beyond 3 months up to:', options: ['4 months', '5 months', '6 months', '9 months'], correct: 2 },
+  ],
+
+  'bullying': [
+    { q: 'Which is the key word that defines bullying vs rudeness?', options: ['Severity', 'Repeated', 'Witnesses', 'Seniority'], correct: 1 },
+    { q: 'Which of these IS reasonable management?', options: ['Yelling at an employee', 'Setting clear performance expectations', 'Spreading rumours about someone', 'Excluding someone from meetings'], correct: 1 },
+    { q: 'Cyberbullying at work includes:', options: ['Official performance reviews', 'Offensive WhatsApp messages on work groups', 'Setting KPIs', 'Asking someone to redo their work'], correct: 1 },
+    { q: 'Bystanders who witness bullying should:', options: ['Ignore it to avoid involvement', 'Check in privately with the affected colleague and report', 'Tell other colleagues as a warning', 'Wait for the victim to report first'], correct: 1 },
+    { q: 'The first step if you are being bullied is:', options: ['Resign immediately', 'Document incidents with dates, times, and witnesses', 'Confront the bully publicly', 'Tell clients'], correct: 1 },
+    { q: 'Social bullying at work includes:', options: ['Giving critical feedback', 'Deliberately excluding someone from team events', 'Monitoring performance', 'Assigning challenging work'], correct: 1 },
+    { q: 'Bullying can cause which of these physical symptoms?', options: ['Increased energy', 'Improved focus', 'Insomnia and fatigue', 'Better relationships'], correct: 2 },
+    { q: 'What should you NOT do if a colleague discloses bullying to you?', options: ['Listen without judgment', 'Share their information with others without permission', 'Direct them to available support', 'Follow up with them later'], correct: 1 },
+    { q: '"My manager gives me difficult targets." This is:', options: ['Bullying', 'Harassment', 'Reasonable management', 'Discrimination'], correct: 2 },
+    { q: 'Gaslighting in the workplace is an example of:', options: ['Physical bullying', 'Verbal bullying', 'Psychological bullying', 'Reasonable feedback'], correct: 2 },
+  ],
+
+  'abac': [
+    { q: 'Which of the following is bribery?', options: ['A branded calendar from a vendor', 'Paying a cash "commission" to win a contract', 'A team lunch during a vendor visit', 'A discounted quote from a supplier'], correct: 1 },
+    { q: 'You can refuse to pay a bribe even if it means losing a deal.', options: ['True', 'False', 'Only with manager approval', 'Only for government contracts'], correct: 0 },
+    { q: 'Which is a red flag in procurement?', options: ['Three competitive quotes received', 'A vendor insisting on cash payments', 'A signed purchase order', 'An itemised invoice'], correct: 1 },
+    { q: 'Corruption includes:', options: ['Competitive tender processes', 'Awarding contracts to relatives without disclosure', 'Setting supplier payment terms', 'Conducting vendor audits'], correct: 1 },
+    { q: 'A gift above the company threshold should be:', options: ['Kept quietly', 'Shared with the team', 'Declared to management', 'Returned only if above ₹10,000'], correct: 2 },
+    { q: '"Facilitation fees" are:', options: ['Always legitimate business expenses', 'A form of bribery', 'Standard in all industries', 'Approved by the government'], correct: 1 },
+    { q: 'Which law governs anti-corruption in India?', options: ['Companies Act', 'Prevention of Corruption Act', 'SEBI Act', 'RTI Act'], correct: 1 },
+    { q: 'A conflict of interest should be:', options: ['Resolved quietly without telling anyone', 'Declared to your manager or HR', 'Ignored if it is minor', 'Handled by legal only'], correct: 1 },
+    { q: 'An employee who reports suspected corruption is called a:', options: ['Informant', 'Spy', 'Whistleblower', 'Complainant'], correct: 2 },
+    { q: 'Accepting a cash equivalent (e.g. gift card) from a vendor is:', options: ['Acceptable if below ₹5,000', 'Never acceptable', 'Fine if declared', 'Only a problem for procurement staff'], correct: 1 },
+  ],
+
+  'data-privacy': [
+    { q: 'India\'s data protection law is called:', options: ['IT Act', 'GDPR', 'DPDP Act 2023', 'Consumer Protection Act'], correct: 2 },
+    { q: 'Which of these is NOT personal data?', options: ['Aadhaar number', 'Email address', 'Publicly listed company revenue', 'Medical records'], correct: 2 },
+    { q: 'Under GDPR, a data breach must be reported within:', options: ['24 hours', '48 hours', '72 hours', '7 days'], correct: 2 },
+    { q: 'The maximum fine under DPDP Act for serious breaches is:', options: ['₹10 crore', '₹50 crore', '₹100 crore', '₹250 crore'], correct: 3 },
+    { q: 'Which of the following is a common cause of data breaches?', options: ['Using company email', 'Sending email to wrong recipient', 'Setting strong passwords', 'Locking screen when away'], correct: 1 },
+    { q: 'Personal data should be kept:', options: ['Forever, for audit purposes', 'Only as long as necessary, then deleted', 'Shared freely within the team', 'On personal devices for convenience'], correct: 1 },
+    { q: 'The "right to be forgotten" means:', options: ['Employees can forget their passwords', 'Individuals can request deletion of their data', 'Old data can be erased from servers automatically', 'Managers cannot access employee data'], correct: 1 },
+    { q: 'Sharing customer data with an unauthorised colleague is:', options: ['Acceptable for urgent situations', 'A data breach', 'Standard practice', 'Only a problem externally'], correct: 1 },
+    { q: 'Which is a key principle of DPDP and GDPR?', options: ['Collect as much data as possible', 'Data collected for one purpose can be reused freely', 'Data must be collected for a specific, clear purpose', 'Personal data can be sold to third parties'], correct: 2 },
+    { q: 'Biometric data (fingerprints, face scans) is classified as:', options: ['Basic personal data', 'Sensitive personal data with extra protection', 'Not covered by DPDP', 'Only relevant for government employees'], correct: 1 },
+  ],
+
+  'code-of-conduct': [
+    { q: 'A Code of Conduct primarily exists to:', options: ['Police employee behaviour', 'Create a shared understanding of professional standards', 'Protect only the company', 'Replace employment contracts'], correct: 1 },
+    { q: 'A conflict of interest should be:', options: ['Hidden to avoid embarrassment', 'Declared to your manager or HR', 'Resolved by yourself quietly', 'Reported only if it involves money'], correct: 1 },
+    { q: 'Company devices can be used for:', options: ['Running a personal business', 'Downloading unlicensed software', 'Primarily business purposes, with limited personal use', 'Anything outside office hours'], correct: 2 },
+    { q: 'Confidential business information must be protected:', options: ['Only while employed', 'Only from external parties', 'Even after leaving the organisation', 'Only by senior employees'], correct: 2 },
+    { q: '"The manager test" asks:', options: ['Would your manager approve your salary?', 'Would you be comfortable if your manager could see what you\'re doing and why?', 'Has your manager approved this task?', 'Would your manager do the same thing?'], correct: 1 },
+    { q: 'Which of the following could be a conflict of interest?', options: ['Reporting a safety hazard', 'Hiring a relative without disclosing the relationship', 'Setting a meeting agenda', 'Completing a training module'], correct: 1 },
+    { q: 'Intellectual property created at work belongs to:', options: ['The employee who created it', 'The organisation', 'The client it was created for', 'It is jointly owned'], correct: 1 },
+    { q: 'Using company name for personal gain without authorisation is:', options: ['Acceptable after 5 years of service', 'A violation of the Code of Conduct', 'Fine if no financial gain is involved', 'Only relevant for senior management'], correct: 1 },
+  ],
+
+  'culture-dei': [
+    { q: '"Diversity is being invited to the party. Inclusion is ___"', options: ['Being on the guest list', 'Being asked to dance', 'Knowing the host', 'Getting a plus-one'], correct: 1 },
+    { q: 'Unconscious bias is:', options: ['Always intentional', 'Rare in professional settings', 'Automatic, unintentional mental shortcuts', 'Only about gender'], correct: 2 },
+    { q: 'Affinity bias means:', options: ['Favouring people similar to ourselves', 'Preferring older candidates', 'Judging people by their first impression', 'Treating women differently'], correct: 0 },
+    { q: 'Inclusive language includes:', options: ['Using "guys" to address mixed groups', 'Respecting preferred pronouns', 'Making nationality jokes in good humour', 'Ignoring cultural differences'], correct: 1 },
+    { q: 'An ally at work is someone who:', options: ['Agrees with everything colleagues say', 'Actively supports under-represented colleagues, even when uncomfortable', 'Avoids any discussion of diversity', 'Reports DEI violations only when asked'], correct: 1 },
+    { q: 'Which of the following is equity (not just equality)?', options: ['Giving everyone the same lunch', 'Giving everyone the same training budget', 'Providing ramps AND stairs, not just one', 'Using a standard hiring process for all'], correct: 2 },
+    { q: 'Person-first language means:', options: ['Introducing yourself first', 'Saying "a person with a disability" rather than "a disabled person"', 'Using first names always', 'Prioritising the person over the job title'], correct: 1 },
+    { q: 'Allyship is best described as:', options: ['A one-time declaration', 'A daily practice of supporting others', 'Reserved for HR professionals', 'Only relevant for minority groups'], correct: 1 },
+  ],
+
+  'hr-policies': [
+    { q: 'Uninformed absence from work is typically treated as:', options: ['Earned leave', 'Casual leave', 'Loss of Pay (LOP)', 'Compensatory off'], correct: 2 },
+    { q: 'Maternity leave in India for the first two children is:', options: ['12 weeks', '16 weeks', '26 weeks', '52 weeks'], correct: 2 },
+    { q: 'Proxy attendance is:', options: ['Acceptable if approved by manager', 'Standard practice for travel days', 'A disciplinary offence', 'Only an issue for factory workers'], correct: 2 },
+    { q: 'The first step in a grievance process is:', options: ['Approaching a lawyer', 'Raising the issue informally with your manager', 'Filing a written complaint with HR immediately', 'Escalating to senior management'], correct: 1 },
+    { q: 'An NDA (Non-Disclosure Agreement) protects:', options: ['Only the employee', 'Only the company', 'Confidential information of both parties', 'Only client information'], correct: 2 },
+    { q: 'Earned Leave (EL) typically accrues at:', options: ['1 day per month', '1.25 days per month', '2 days per month', '3 days per month'], correct: 1 },
+    { q: 'A show-cause notice is issued at which stage of disciplinary action?', options: ['Before any investigation', 'After summary dismissal', 'At the beginning of the disciplinary process', 'Only for senior employees'], correct: 2 },
+  ],
+
+  'workplace-safety': [
+    { q: 'During a fire evacuation, you should:', options: ['Use the lift for speed', 'Collect your belongings first', 'Use the nearest fire exit and assemble at the muster point', 'Wait for the all-clear before moving'], correct: 2 },
+    { q: 'A psychosocial hazard includes:', options: ['A slippery floor', 'Faulty electrical wiring', 'Chronic workplace stress', 'A chemical spill'], correct: 2 },
+    { q: 'PPE should be inspected:', options: ['Once a month', 'Before each use', 'Only when it looks damaged', 'Only by the safety officer'], correct: 1 },
+    { q: 'If you find a damaged fire extinguisher, you should:', options: ['Ignore it — it probably still works', 'Try to repair it yourself', 'Report it to the safety officer immediately', 'Put it in storage'], correct: 2 },
+    { q: 'Ergonomic hazards include:', options: ['Chemical exposure', 'Poor lighting only', 'Incorrect posture and repetitive strain', 'Biological contamination'], correct: 2 },
+    { q: 'In a medical emergency, the first thing to do is:', options: ['Move the person to a safer location', 'Call the first aider or emergency services', 'Give the person water', 'Complete an incident report'], correct: 1 },
+    { q: 'The emergency number in India is:', options: ['100', '101', '108', '112'], correct: 3 },
+    { q: 'Hazard reporting is the responsibility of:', options: ['Only the safety officer', 'Only managers', 'Every employee', 'Only factory workers'], correct: 2 },
+  ],
+
+  'mental-health': [
+    { q: 'Approximately what fraction of adults experience a mental health condition each year?', options: ['1 in 10', '1 in 5', '1 in 20', '1 in 50'], correct: 1 },
+    { q: 'Burnout is caused by:', options: ['Enjoying your work too much', 'Chronic stress over time', 'One very difficult day', 'Working from home'], correct: 1 },
+    { q: 'Which is NOT an early sign of burnout?', options: ['Feeling cynical about work', 'Declining performance', 'Increased energy and focus', 'Physical fatigue'], correct: 2 },
+    { q: 'When supporting a colleague who is struggling, you should:', options: ['Tell them to think positively', 'Share their information with the team for support', 'Ask open questions and listen without judgment', 'Solve their problem immediately'], correct: 2 },
+    { q: 'Rest is best described as:', options: ['Laziness', 'Weakness', 'A performance strategy', 'Only relevant when sick'], correct: 2 },
+    { q: 'Mindfulness can help reduce:', options: ['Physical fitness', 'Cortisol (stress hormone) levels', 'Workload', 'Team conflict'], correct: 1 },
+    { q: 'Mental health conditions are:', options: ['A sign of weakness', 'Rare in professional settings', 'Real, common, and treatable', 'Only relevant to people with serious illness'], correct: 2 },
+    { q: 'Psychological safety means:', options: ['Having security cameras at work', 'Feeling safe to speak up, take risks, and be yourself without fear', 'Physical safety in the office', 'Data protection for employees'], correct: 1 },
+  ],
+
+  'biz-comm': [
+    { q: 'Which of the 5 Cs of communication means saying exactly what you mean?', options: ['Concise', 'Correct', 'Clear', 'Complete'], correct: 2 },
+    { q: 'A good email subject line is:', options: ['"Follow-up"', '"Hi"', '"Action needed: Q3 report by 5 PM Friday"', '"Important"'], correct: 2 },
+    { q: 'When should you use "Reply All"?', options: ['Always, to keep everyone informed', 'Only when everyone genuinely needs to see your reply', 'Only for internal emails', 'Never — use individual replies always'], correct: 1 },
+    { q: 'Writing an email in CAPITALS conveys:', options: ['Professionalism', 'Urgency', 'Shouting and aggression', 'Importance'], correct: 2 },
+    { q: 'In a difficult verbal conversation, you should:', options: ['Begin with "You always..."', 'Use "I feel..." statements', 'Address the person in a group setting', 'Resolve it by email instead'], correct: 1 },
+    { q: 'The best time to send an angry email is:', options: ['Immediately — to be direct', 'After writing it, waiting an hour, and reconsidering', 'During a meeting for accountability', 'After copying in senior management'], correct: 1 },
+    { q: 'Concise communication means:', options: ['Being brief to the point of being rude', 'Using as few words as needed without losing meaning', 'Never giving details', 'Writing less than 3 sentences always'], correct: 1 },
+    { q: 'In a meeting, you should:', options: ['Speak as much as possible to show engagement', 'Listen as much as you speak', 'Avoid summarising to save time', 'Never take notes'], correct: 1 },
+  ],
+
+  'english-grammar': [
+    { q: '"Let\'s eat, Grandma!" vs "Let\'s eat Grandma!" — the difference is caused by:', options: ['A full stop', 'A comma', 'An apostrophe', 'Capitalisation'], correct: 1 },
+    { q: 'Everyone ___ a chance to speak.', options: ['have', 'are having', 'has', 'were given'], correct: 2 },
+    { q: '"The rain ___ the match." Which word is correct?', options: ['effected', 'affected', 'had effect on', 'gave effect to'], correct: 1 },
+    { q: 'Which uses an article correctly?', options: ['She is a honest person.', 'He ate a apple.', 'It was an honour.', 'They found a umbrella.'], correct: 2 },
+    { q: 'Which sentence is in active voice?', options: ['The report was written by Ravi.', 'The proposal was approved.', 'The team completed the project.', 'Mistakes were made.'], correct: 2 },
+    { q: '"The company increased ___ revenue."', options: ["it's", 'its', "its'", 'their'], correct: 1 },
+    { q: '"I am taller ___ my sister."', options: ['then', 'than', 'that', 'as'], correct: 1 },
+    { q: 'A collective noun is:', options: ['Happiness', 'Running', 'A flock of birds', 'Quickly'], correct: 2 },
+    { q: 'An abstract noun is:', options: ['Mumbai', 'Chair', 'Justice', 'Running'], correct: 2 },
+    { q: '"___ going to rain today." Which is correct?', options: ["It's", 'Its', "Its'", 'Itss'], correct: 0 },
+    { q: 'Which word is an adverb?', options: ['Quick', 'Quickly', 'Quickness', 'Quicken'], correct: 1 },
+    { q: 'Which sentence uses a semicolon correctly?', options: ['She is smart; and talented.', 'The meeting ended; everyone left.', 'He ran; because he was late.', 'I like; tea and coffee.'], correct: 1 },
+  ],
+
+  'presentation': [
+    { q: 'The opening of a presentation should make up approximately ___ of the total time:', options: ['30%', '50%', '10%', '25%'], correct: 2 },
+    { q: 'The maximum recommended lines of text per slide is:', options: ['3', '6', '10', '15'], correct: 1 },
+    { q: 'Reading every word off your slides is a problem because:', options: ['It makes the presentation too short', 'Your audience will stop listening to you', 'It wastes the slides', 'It is only suitable for technical audiences'], correct: 1 },
+    { q: 'Deliberate pauses during a presentation are:', options: ['Signs of poor preparation', 'Powerful tools for emphasis', 'To be avoided always', 'Only used by experienced speakers'], correct: 1 },
+    { q: 'The minimum recommended font size on a slide is:', options: ['12pt', '18pt', '24pt', '32pt'], correct: 2 },
+    { q: 'Nervousness before a presentation usually means:', options: ['You should cancel', 'You are poorly prepared', 'You care about doing well', 'You need more experience first'], correct: 2 },
+    { q: 'The best way to open a presentation is with:', options: ['An apology for taking their time', 'An agenda slide', 'A hook — story, question, or bold statement', 'Your CV and credentials'], correct: 2 },
+  ],
+
+  'performance-mgmt': [
+    { q: 'SMART goals stand for:', options: ['Simple, Measurable, Actionable, Realistic, Timely', 'Specific, Measurable, Achievable, Relevant, Time-bound', 'Structured, Manageable, Assigned, Reviewed, Tracked', 'Strategic, Meaningful, Agreed, Resourced, Tested'], correct: 1 },
+    { q: 'In the SBI feedback model, "B" stands for:', options: ['Background', 'Behaviour', 'Benefit', 'Business'], correct: 1 },
+    { q: 'Performance management is best described as:', options: ['An annual review event', 'A ranking exercise', 'An ongoing process of goal-setting, feedback, and development', 'A punitive process for underperformers'], correct: 2 },
+    { q: 'When addressing underperformance, you should:', options: ['Wait until the annual review', 'Address it early in a direct private conversation', 'Copy HR on all emails immediately', 'Issue a formal warning first'], correct: 1 },
+    { q: 'Feedback should be delivered:', options: ['Publicly for accountability', 'Only in annual reviews', 'Promptly and in private for negative feedback', 'Only when requested'], correct: 2 },
+    { q: 'The purpose of performance management is:', options: ['To rank employees for bonuses', 'To help every employee do their best work and grow', 'To build a case for termination', 'To satisfy audit requirements'], correct: 1 },
+    { q: 'Goals set collaboratively (manager and employee together) tend to be:', options: ['Less ambitious', 'More owned and achieved', 'More time-consuming with no benefit', 'Suitable only for senior staff'], correct: 1 },
+  ],
+
+  'hiring-skills': [
+    { q: 'Structured interviews use:', options: ['Spontaneous questions based on gut feel', 'Consistent pre-planned questions for all candidates', 'Only personality assessments', 'Informal conversations over lunch'], correct: 1 },
+    { q: 'Similarity bias in hiring means:', options: ['Preferring candidates with similar qualifications', 'Favouring people who remind you of yourself', 'Hiring people from the same industry', 'Preferring internal candidates'], correct: 1 },
+    { q: 'Before writing a job description, you should:', options: ['Post on job boards immediately', 'Define 3-5 outcomes the person must achieve in Year 1', 'Ask the last person in the role what they did', 'Copy a similar job description online'], correct: 1 },
+    { q: 'To reduce bias, interviewers should score candidates:', options: ['After discussing with the panel first', 'Independently before comparing notes', 'Based on overall impression', 'Only on technical skills'], correct: 1 },
+    { q: 'The halo effect in interviews means:', options: ['A candidate arrives looking confident', 'One strong answer positively colours your view of everything else', 'The candidate has strong references', 'The interviewer is in a good mood'], correct: 1 },
+    { q: 'A diverse interview panel helps because:', options: ['It is a legal requirement', 'Different people notice different things and bring different perspectives', 'It speeds up the process', 'It reduces the number of interviews needed'], correct: 1 },
+  ],
+
+  'conflict-res': [
+    { q: 'Conflict at work is:', options: ['Always destructive and should be avoided', 'A sign of poor leadership', 'Normal and can be healthy if managed well', 'Only relevant in large teams'], correct: 2 },
+    { q: 'Task conflict is disagreement about:', options: ['Personal relationships', 'Work content, goals, or approach', 'Personality clashes', 'Reporting lines'], correct: 1 },
+    { q: 'The first step in resolving conflict is:', options: ['Sending a formal complaint to HR', 'Creating space for a private, calm conversation', 'Asking colleagues to choose sides', 'Escalating to senior management'], correct: 1 },
+    { q: 'When mediating conflict, you should focus on:', options: ['Who is right and who is wrong', 'Shared interests — what does each person actually need?', 'The history of the relationship', 'Past incidents to establish blame'], correct: 1 },
+    { q: 'Avoiding conflict entirely tends to:', options: ['Resolve it naturally over time', 'Make it worse through accumulated resentment', 'Be the most professional approach', 'Show emotional maturity'], correct: 1 },
+    { q: 'After agreeing a resolution, you should:', options: ['Consider the matter closed permanently', 'Follow up in 2 weeks to check the resolution is holding', 'Document it and send it to HR', 'Share the outcome with the wider team'], correct: 1 },
+  ],
+
+  'finance-integrity': [
+    { q: 'Expense claims are subject to:', options: ['Only internal review', 'Audit at any time', 'Review only if over ₹50,000', 'Manager approval only'], correct: 1 },
+    { q: 'Splitting a large expense to avoid approval thresholds is:', options: ['A smart financial workaround', 'Fraud', 'Acceptable with verbal approval', 'Only an issue for procurement'], correct: 1 },
+    { q: 'Before goods or services are delivered, you should raise:', options: ['An invoice', 'A purchase order', 'An approval email', 'A credit note'], correct: 1 },
+    { q: 'For purchases above the threshold, you should get:', options: ['1 quote', '2 quotes', 'At least 3 quotes', 'Only internal quotes'], correct: 2 },
+    { q: 'Financial integrity matters because:', options: ['Only auditors care about it', 'It is only relevant for the finance team', 'Company finances fund salaries, growth, and operations', 'It only affects listed companies'], correct: 2 },
+    { q: 'A vendor who insists on cash payment is:', options: ['Being efficient', 'A red flag for potential corruption', 'Standard in some industries', 'Acceptable for small amounts'], correct: 1 },
+  ],
+
+  'customer-service': [
+    { q: 'The four pillars of excellent customer service are:', options: ['Speed, Cost, Quantity, Style', 'Responsiveness, Reliability, Empathy, Resolution', 'Politeness, Pricing, Products, Process', 'Communication, Compliance, Cost, Culture'], correct: 1 },
+    { q: 'Reflecting back to a customer means:', options: ['Agreeing with everything they say', 'Summarising what you heard to confirm understanding', 'Defending the company\'s position', 'Repeating the solution multiple times'], correct: 1 },
+    { q: 'When a customer is angry, the FIRST thing to do is:', options: ['Explain the company policy', 'Offer a refund immediately', 'Acknowledge their frustration before anything else', 'Transfer them to a senior colleague'], correct: 2 },
+    { q: '"I\'m sorry you\'ve had this experience" is an example of:', options: ['Admitting fault', 'Empathy without necessarily accepting blame', 'Weakness', 'A legal liability'], correct: 1 },
+    { q: 'A customer who had a problem that was brilliantly resolved is often:', options: ['Less loyal than one who never had a problem', 'More loyal than one who never had a problem', 'Equally satisfied either way', 'Likely to complain again'], correct: 1 },
+    { q: 'Active listening involves:', options: ['Preparing your response while the customer speaks', 'Multitasking to save time', 'Giving full attention and letting the customer finish', 'Summarising every 30 seconds'], correct: 2 },
+    { q: 'When you cannot fulfil a customer\'s request, you should:', options: ['Apologise and end the conversation', 'Focus on what you CAN do and offer a clear next step', 'Transfer them immediately', 'Explain why the policy exists in detail'], correct: 1 },
+  ],
+}
+
+// Returns a random sample of n questions from a bank
+export function getRandomQuestions(courseId: string, n: number = 8): any[] {
+  const bank = QUESTION_BANKS[courseId] || []
+  const shuffled = [...bank].sort(() => Math.random() - 0.5)
+  return shuffled.slice(0, Math.min(n, shuffled.length))
+}

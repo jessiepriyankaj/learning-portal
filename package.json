@@ -1,6 +1,6 @@
 {
-  "name": "posh-training-portal",
-  "version": "1.0.0",
+  "name": "merit-matters-portal",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,7 +14,7 @@
     "@supabase/supabase-js": "^2.43.1",
     "resend": "^3.2.0",
     "xlsx": "^0.18.5",
-    "lucide-react": "^0.383.0"
+    "html2canvas": "^1.4.1"
   },
   "devDependencies": {
     "@types/node": "^20",
